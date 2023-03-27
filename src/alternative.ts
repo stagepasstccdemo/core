@@ -12,7 +12,7 @@ const apps = [
 apps.forEach((app) => {
   registerApplication({
     name: app.name,
-    app: () => System.import(app.package),
+    app: () => System.import<any>(app.package),
     activeWhen: app.activeWhen,
   });
 });
