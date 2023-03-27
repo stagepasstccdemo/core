@@ -21,5 +21,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy
-        run: yarn deploy
+        run : |
+          yarn install
+          yarn build
+          yarn deploy
+        
         
