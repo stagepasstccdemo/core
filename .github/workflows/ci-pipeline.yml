@@ -22,7 +22,6 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }} 
       - name: Deploy
         run : |
-          npm cache clean --force       
-          npm ci
+          npm install 
           npm run build
         

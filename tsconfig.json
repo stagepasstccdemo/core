@@ -1,6 +1,6 @@
 {
   "extends": "ts-config-single-spa",
-  "files": ["src/stagepass-root-config.ts"],
+  "files": ["src/shoppe-root-config.ts"],
   "compilerOptions": {
     "declarationDir": "dist"
   },
