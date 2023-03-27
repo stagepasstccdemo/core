@@ -23,8 +23,8 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Deploy
         run : |
-          yarn install
-          yarn build
+          npm install
+          npm run build
           yarn deploy
         
         
