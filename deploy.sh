@@ -1,8 +1,14 @@
 curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -o ./jq
 chmod a+x ./jq
+
+# Get Version
 VERSION=$(node --eval="process.stdout.write(require('./package.json').version)")
+
+# Build
 yarn install
 yarn build
+
+# Deploy
 aws s3 cp s3://mfe-stage-pass/config/import-map.json import-map.json
 NEW_URL=/config/mfe/root-config/$VERSION/stagepass-root-config.js
 cat ./import-map.json | ./jq --arg NEW_URL "$NEW_URL" '.imports["@stagepass/root-config"] = $NEW_URL' > new.importmap.json
