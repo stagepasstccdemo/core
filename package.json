@@ -1,5 +1,6 @@
 {
-  "name": "@shoppe/root-config",
+  "name": "@stagepass/root-config",
+  "version": "1.0.0",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
     "lint": "eslint src --ext js,ts,tsx",
@@ -46,5 +47,5 @@
     "@types/webpack-env": "^1.16.2",
     "single-spa-layout": "^1.6.0"
   },
-  "types": "dist/shoppe-root-config.d.ts"
+  "types": "dist/stagepass-root-config.d.ts"
 }
