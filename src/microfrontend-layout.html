@@ -1,7 +1,10 @@
 <single-spa-router>
   <main>
-    <route path="default">
-      <application name="@stagepass/events"></application>
+    <route default>
+      <application name="@stagepass/app-events"></application>
+    </route>
+    <route path="/events">
+      <application name="@stagepass/app-events"></application>
     </route>
   </main>
 </single-spa-router>

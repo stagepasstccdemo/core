@@ -3,7 +3,7 @@ import { registerApplication, start } from "single-spa";
 const apps = [
   {
     name: "@stagepass/app-events",
-    package: "@stagepass/app-event",
+    package: "@stagepass/app-events",
     activeWhen: ["/events"],
     // activeWhen: (location) => !location.pathname.startsWith("/blank"),
   },
@@ -11,10 +11,12 @@ const apps = [
 
 apps.forEach((app) => {
   registerApplication({
-    name: app.name,
+    name: app.package,
     app: () => System.import<any>(app.package),
     activeWhen: app.activeWhen,
   });
 });
 
-start();
+start({
+  urlRerouteOnly: true,
+});
