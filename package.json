@@ -1,6 +1,5 @@
 {
   "name": "@stagepass/root-config",
-  "version": "1.0.0",
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
     "lint": "eslint src --ext js,ts,tsx",
@@ -10,8 +9,7 @@
     "prepare": "husky install",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",
-    "build:types": "tsc",
-    "deploy": "sh deploy.sh"
+    "build:types": "tsc"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
