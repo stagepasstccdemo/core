@@ -46,7 +46,8 @@ jobs:
     permissions:
       contents: write
 
-  build_and_deploy:
+  deploy:
+    needs: publish
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
