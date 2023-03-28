@@ -51,6 +51,8 @@
     "workbox-webpack-plugin": "^6.5.4"
   },
   "dependencies": {
+    "@sentry/browser": "^7.45.0",
+    "@sentry/tracing": "^7.45.0",
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
     "@types/webpack-env": "^1.16.2",
