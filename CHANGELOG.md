@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/stagePass/core/compare/v1.3.0...v1.4.0) (2023-03-28)
+
+
+### Features
+
+* setup path location to manifest and service-worker ([9ad2e60](https://github.com/stagePass/core/commit/9ad2e6000e31b7116b86e1d0ac7308afee9f369b))
+
 # [1.3.0](https://github.com/stagePass/core/compare/v1.2.0...v1.3.0) (2023-03-28)
 
 
