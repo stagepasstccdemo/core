@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/stagePass/core/compare/v1.2.0...v1.3.0) (2023-03-28)
+
+
+### Features
+
+* setup serviceWorker and activate pwa ([8ab6a21](https://github.com/stagePass/core/commit/8ab6a2150692457b98110c85edd06dc83a4181ef))
+
 # [1.2.0](https://github.com/stagePass/core/compare/v1.1.0...v1.2.0) (2023-03-28)
 
 
