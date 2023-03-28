@@ -78,6 +78,10 @@
       "@semantic-release/changelog",
       "@semantic-release/npm",
       {
+        "path": "@semantic-release/npm",
+        "npmPublish": false
+      },
+      {
         "path": "@semantic-release/git",
         "assets": [
           "package.json",
