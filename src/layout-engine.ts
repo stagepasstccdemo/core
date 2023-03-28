@@ -5,7 +5,6 @@ import {
   constructLayoutEngine,
 } from "single-spa-layout";
 import microfrontendLayout from "./microfrontend-layout.html";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const routes = constructRoutes(microfrontendLayout);
 const applications = constructApplications({
@@ -19,4 +18,3 @@ const layoutEngine = constructLayoutEngine({ routes, applications });
 applications.forEach(registerApplication);
 layoutEngine.activate();
 start();
-serviceWorkerRegistration.register();
