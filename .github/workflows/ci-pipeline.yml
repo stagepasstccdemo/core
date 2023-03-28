@@ -3,7 +3,8 @@ name: Deploy to Production
 on:
   push:
     branches:
-      - feature/sta-24-events-mfa-default-project-config-and-tooling
+      - main
+      - staging
 
 jobs:
 
@@ -63,6 +64,6 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }} 
       - name: Deploy
         run : yarn deploy
-        
+
           
         
