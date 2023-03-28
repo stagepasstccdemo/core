@@ -1,6 +1,6 @@
 {
   "name": "@stagepass/root-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
