@@ -11,7 +11,7 @@ NEW_URL=/config/mfe/root-config/$VERSION/stagepass-root-config.js
 cat ./import-map.json | ./jq --arg NEW_URL "$NEW_URL" '.imports["@stagepass/root-config"] = $NEW_URL' > new.importmap.json
 aws s3 cp dist s3://mfe-stage-pass/config/mfe/root-config/$VERSION --recursive
 aws s3 cp dist/index.html s3://mfe-stage-pass/index.html
-aws s3 cp dist/public s3://mfe-stage-pass/ --recursive
+aws s3 cp dist/public s3://mfe-stage-pass/public --recursive
 aws s3 cp dist/service-worker.js s3://mfe-stage-pass/service-worker.js
 aws s3 cp new.importmap.json s3://mfe-stage-pass/config/import-map.json
 aws cloudfront create-invalidation --distribution-id E3AG25M6KMU46Y --paths '/config/import-map.json'
