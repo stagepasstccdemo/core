@@ -1,6 +1,7 @@
 {
   "name": "@stagepass/root-config",
   "version": "1.0.0",
+  "private": true,
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
     "lint": "eslint src --ext js,ts,tsx",
@@ -77,10 +78,6 @@
     "prepare": [
       "@semantic-release/changelog",
       "@semantic-release/npm",
-      {
-        "path": "@semantic-release/npm",
-        "npmPublish": false
-      },
       {
         "path": "@semantic-release/git",
         "assets": [
