@@ -1,5 +1,7 @@
 {
-  "name": "@stagePass/root-config",
+  "name": "@stagepass/root-config",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
     "start": "webpack serve --port 9000 --env isLocal",
     "lint": "eslint src --ext js,ts,tsx",
@@ -7,44 +9,84 @@
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "prepare": "husky install",
+    "commit": "git-cz",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",
-    "build:types": "tsc"
+    "build:types": "tsc",
+    "deploy": "sh deploy.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
     "@babel/eslint-parser": "^7.15.0",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
     "@babel/runtime": "^7.15.3",
+    "@commitlint/cli": "^17.5.0",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "concurrently": "^6.2.1",
     "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-config-ts-important-stuff": "^1.1.0",
     "eslint-plugin-prettier": "^3.4.1",
     "html-webpack-plugin": "^5.3.2",
-    "husky": "^7.0.2",
+    "husky": "^8.0.3",
     "jest": "^27.0.6",
     "jest-cli": "^27.0.6",
     "prettier": "^2.3.2",
     "pretty-quick": "^3.1.1",
     "serve": "^12.0.0",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^4.8.0",
-    "webpack-dev-server": "^4.0.0",
-    "webpack-merge": "^5.8.0",
-    "@babel/preset-typescript": "^7.15.0",
-    "eslint-config-ts-important-stuff": "^1.1.0",
+    "ts-config-single-spa": "^3.0.0",
     "typescript": "^4.3.5",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
     "webpack-config-single-spa-ts": "^4.0.0",
-    "ts-config-single-spa": "^3.0.0"
+    "webpack-dev-server": "^4.0.0",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "@types/jest": "^27.0.1",
     "@types/systemjs": "^6.1.1",
-    "single-spa": "^5.9.3",
     "@types/webpack-env": "^1.16.2",
+    "semantic-release": "^21.0.0",
+    "single-spa": "^5.9.3",
     "single-spa-layout": "^1.6.0"
   },
-  "types": "dist/stagePass-root-config.d.ts"
+  "types": "dist/stagepass-root-config.d.ts",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ],
+  "release": {
+    "branches": [
+      "main",
+      "staging"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "package-lock.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ]
+  }
 }
