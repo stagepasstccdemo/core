@@ -8,20 +8,20 @@
   <title>Stage Pass</title>
   <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"> -->
-  <meta name="importmap-type" content="systemjs-importmap">
-  <!-- <meta name="theme-color" content="#f69435">
-  <meta name="description" content="WebApp to help buy tickets of all kinds of events">
- -->
+  <meta name="importmap-type" content="systemjs-importmap"/>
+  <meta name="theme-color" content="#f69435"/>
+  <meta name="description" content="WebApp to help buy tickets of all kinds of events"/>
 
-  <!-- <% if (isLocal) { %>
-    <link rel="manifest" href="../public/manifest.json">
-    <link rel="apple-touch-icon" href="../public/icon-180x180.png">
-    <link rel="icon" href="../public/favicon.ico" type="image/x-icon">
+
+  <% if (isLocal) { %>
+    <link rel="manifest" href="../public/manifest.json"/>
+    <link rel="apple-touch-icon" href="../public/icon-180x180.png"/>
+    <link rel="icon" href="../public/favicon.ico" type="image/x-icon"/>
   <% } else { %>
-    <link rel="manifest" href="./public/manifest.json">
-    <link rel="apple-touch-icon" href="./public/icon-180x180.png">
-    <link rel="icon" href="./public/favicon.ico" type="image/x-icon">
-  <% } %> -->
+    <link rel="manifest" href="./public/manifest.json"/>
+    <link rel="apple-touch-icon" href="./public/icon-180x180.png"/>
+    <link rel="icon" href="./public/favicon.ico" type="image/x-icon"/>
+  <% } %>
 
 
   <script type="systemjs-importmap">
@@ -36,6 +36,7 @@
     }
   </script>
 
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
