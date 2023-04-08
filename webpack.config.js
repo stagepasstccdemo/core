@@ -19,7 +19,7 @@ module.exports = (webpackConfigEnv, argv) => {
     // modify the webpack config however you'd like to by adding to this object
     plugins: [
       new HtmlWebpackPlugin({
-        inject: false,
+        title: "Stagepass",
         template: "src/index.ejs",
         templateParameters: {
           isLocal: webpackConfigEnv && webpackConfigEnv.isLocal,
@@ -29,39 +29,6 @@ module.exports = (webpackConfigEnv, argv) => {
       new WorkboxPlugin.GenerateSW({
         clientsClaim: true,
         skipWaiting: true,
-        cacheId: "@stagepass-cache",
-        cleanupOutdatedCaches: true,
-        maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, // 10 MB
-        runtimeCaching: [
-          {
-            urlPattern: new RegExp(
-              "https://fonts.(?:googleapis|gstatic).com/(.*)"
-            ),
-            handler: "CacheFirst",
-            options: {
-              cacheName: "google-fonts",
-              expiration: {
-                maxEntries: 30,
-              },
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
-            },
-          },
-          {
-            urlPattern: new RegExp("https://(.*).stagepass.com/(.*)"),
-            handler: "NetworkFirst",
-            options: {
-              cacheName: "stagepass-pages",
-              expiration: {
-                maxEntries: 30,
-              },
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
-            },
-          },
-        ],
       }),
       new CopyWebpackPlugin({
         patterns: [
