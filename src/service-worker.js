@@ -1,15 +1,6 @@
-importScripts(
-  "https://storage.googleapis.com/workbox-cdn/releases/6.0.2/workbox-sw.js"
-);
-
 const staticCacheName = 'stagepass-{{ site.time | date: "%Y-%m-%d-%H-%M" }}';
 
 const filesToCache = ["/"];
-
-workbox.routing.registerRoute(
-  ({ request }) => request.destination === "image",
-  new workbox.strategies.NetworkFirst()
-);
 
 // Cache on install
 this.addEventListener("install", (event) => {
@@ -28,7 +19,7 @@ this.addEventListener("activate", (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames
-          .filter((cacheName) => cacheName.startsWith("willian-justen-"))
+          .filter((cacheName) => cacheName.startsWith("stagepass-"))
           .filter((cacheName) => cacheName !== staticCacheName)
           .map((cacheName) => caches.delete(cacheName))
       );
