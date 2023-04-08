@@ -4,5 +4,13 @@ importScripts(
 
 workbox.routing.registerRoute(
   ({ request }) => request.destination === "image",
-  new workbox.strategies.NetworkFirst()
+  new workbox.strategies.CacheFirst()
 );
+
+self.addEventListener("install", (event) => {
+  event.waitUntil(
+    caches.open("@stagepass").then((cache) => {
+      return cache.addAll(["index.html", "script.js", "style.css"]);
+    })
+  );
+});
