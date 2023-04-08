@@ -27,6 +27,8 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       }),
       new WorkboxPlugin.GenerateSW({
+        cacheId: "@stagepass",
+        directoryIndex: "index.html",
         clientsClaim: true,
         skipWaiting: true,
       }),
