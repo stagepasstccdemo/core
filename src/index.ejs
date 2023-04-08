@@ -23,7 +23,9 @@
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
         "react": "https://cdn.jsdelivr.net/npm/react@17.0.2/umd/react.production.min.js",
-        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js"
+        "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.2/umd/react-dom.production.min.js",
+        "zustand": "https://unpkg.com/zustand@3.6.9/system/index.js",
+        "zustand/middleware": "https://unpkg.com/zustand@3.6.9/system/middleware.js"
       }
     }
   </script>
@@ -45,7 +47,9 @@
           "imports": {
             "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
             "@stagepass/root-config": "//localhost:9000/stagepass-root-config.js",
-            "@stagepass/app-events": "//localhost:8080/stagepass-app-events.js"
+            "@stagepass/app-events": "//localhost:8080/stagepass-app-events.js",
+            "@stagepass/osiris-ui": "//localhost:8081/stagepass-osiris-ui.js",
+            "@stagepass/util-state": "//localhost:8082/stagepass-util-state.js"
           }
         }
     </script>
