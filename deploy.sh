@@ -15,4 +15,4 @@ aws s3 cp dist/index.html s3://mfe-stage-pass/index.html
 aws s3 cp dist/public s3://mfe-stage-pass/public --recursive
 aws s3 cp dist/service-worker.js s3://mfe-stage-pass/service-worker.js
 aws s3 cp new.importmap.json s3://mfe-stage-pass/config/import-map.json
-aws cloudfront create-invalidation --distribution-id E3AG25M6KMU46Y --paths '/config/import-map.json'
+aws cloudfront create-invalidation --distribution-id E3AG25M6KMU46Y --paths '/config/import-map.json' '/index.html' '/service-worker.js' '/public/*' '/config/mfe/root-config/*'
