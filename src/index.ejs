@@ -9,16 +9,23 @@
   <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
   <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"> -->
   <meta name="importmap-type" content="systemjs-importmap" />
+  <meta name="theme-color" content="#f69435" />
+  <meta name="description" content="WebApp to help buy tickets of all kinds of events">
+
 
   <% if (isLocal) { %>
     <link rel="manifest" href="../public/manifest.json" />
+    <link rel="apple-touch-icon" href="../public/icon-180x180.png"><!-- 180×180 -->
+    <link rel="icon" href="../public/favicon.ico" type="image/x-icon" />
+
     <% } else { %>
-    <link rel="manifest" href="./public/manifest.json" />
-  <% } %>
+      <link rel="manifest" href="./public/manifest.json" />
+      <link rel="apple-touch-icon" href="./public/icon-180x180.png"><!-- 180×180 -->
+      <link rel="icon" href="./public/favicon.ico" type="image/x-icon" />
+      <% } %>
 
 
-
-  <script type="systemjs-importmap">
+        <script type="systemjs-importmap">
     {
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js",
@@ -30,22 +37,20 @@
     }
   </script>
 
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Raleway:wght@400;500;600;700&family=Varela+Round&display=swap"
-    rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Raleway:wght@400;500;600;700&family=Varela+Round&display=swap"
+          rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
-  <!-- Add your organization's prod import map URL to this script's src  -->
-  <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
+        <link rel="stylesheet" href="style.css">
+        <!-- Add your organization's prod import map URL to this script's src  -->
+        <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
 
-  <% if (isLocal) { %>
-    <script type="systemjs-importmap">
+        <% if (isLocal) { %>
+          <script type="systemjs-importmap">
         {
           "imports": {
-            "@single-spa/welcome": "https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js",
             "@stagepass/root-config": "//localhost:9000/stagepass-root-config.js",
             "@stagepass/app-events": "//localhost:8080/stagepass-app-events.js",
             "@stagepass/osiris-ui": "//localhost:8081/stagepass-osiris-ui.js",
@@ -53,18 +58,19 @@
           }
         }
     </script>
-    <% } else { %>
-    <script type="systemjs-importmap" src="/config/import-map.json"></script>
-    <% } %>
-  
-    <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
-    <% if (isLocal) { %>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
-    <% } else { %>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
-    <% } %>
+          <% } else { %>
+            <script type="systemjs-importmap" src="/config/import-map.json"></script>
+            <% } %>
+
+              <script
+                src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+              <% if (isLocal) { %>
+                <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+                <% } else { %>
+                  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+                  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+                  <% } %>
 
 </head>
 
@@ -83,4 +89,5 @@
   <import-map-overrides-full show-when-local-storage="devtools" dev-libs>
   </import-map-overrides-full>
 </body>
+
 </html>
