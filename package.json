@@ -76,8 +76,7 @@
   ],
   "release": {
     "branches": [
-      "main",
-      "staging"
+      "main"
     ],
     "prepare": [
       "@semantic-release/changelog",
