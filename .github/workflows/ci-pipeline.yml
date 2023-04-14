@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - staging
 
 jobs:
 
@@ -64,6 +63,3 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }} 
       - name: Deploy
         run : yarn deploy
-
-          
-        
