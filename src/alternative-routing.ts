@@ -2,10 +2,16 @@ import { registerApplication, start } from "single-spa";
 
 const apps = [
   {
+    name: "@stagepass/app-auth",
+    package: "@stagepass/app-auth",
+    activeWhen: ["/auth", "/"],
+    // activeWhen: (location) => !location.pathname.startsWith("/blank"),
+  },
+  {
     name: "@stagepass/app-events",
     package: "@stagepass/app-events",
-    activeWhen: ["/events"],
-    // activeWhen: (location) => !location.pathname.startsWith("/blank"),
+    // activeWhen: ["/events", "/event"],
+    activeWhen: (location) => location.pathname.startsWith("/event"),
   },
 ];
 
