@@ -30,46 +30,47 @@
     <link rel="manifest" href="../public/manifest.json" />
     <link rel="apple-touch-icon" href="../public/icon-180x180.png" />
     <link rel="icon" href="../public/favicon.ico" type="image/x-icon" />
-  <% } else { %>
-    <link rel="manifest" href="./public/manifest.json" />
-    <link rel="apple-touch-icon" href="./public/icon-180x180.png" />
-    <link rel="icon" href="./public/favicon.ico" type="image/x-icon" />
-  <% } %>
+    <% } else { %>
+      <link rel="manifest" href="./public/manifest.json" />
+      <link rel="apple-touch-icon" href="./public/icon-180x180.png" />
+      <link rel="icon" href="./public/favicon.ico" type="image/x-icon" />
+      <% } %>
 
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Raleway:wght@400;500;600;700&family=Varela+Round&display=swap"
-    rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway+Dots&family=Raleway:wght@400;500;600;700&family=Varela+Round&display=swap"
+          rel="stylesheet">
 
 
-  <% if (isLocal) { %>
-    <script type="systemjs-importmap">
+        <% if (isLocal) { %>
+          <script type="systemjs-importmap">
     {
       "imports": {
         "@stagepass/root-config": "//localhost:9000/stagepass-root-config.js",
         "@stagepass/app-events": "//localhost:8080/stagepass-app-events.js",
         "@stagepass/app-auth": "//localhost:8083/stagepass-app-auth.js",
+        "@stagepass/app-checkout": "//localhost:8084/stagepass-app-checkout.js",
         "@stagepass/osiris-ui": "//localhost:8081/stagepass-osiris-ui.js",
         "@stagepass/util-state": "//localhost:8082/stagepass-util-state.js"
       }
     }
     </script>
 
-  <% } else { %>
-    <script type="systemjs-importmap" src="/config/import-map.json"></script>
-  <% } %>
+          <% } else { %>
+            <script type="systemjs-importmap" src="/config/import-map.json"></script>
+            <% } %>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
-  <% if (isLocal) { %>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
-  <% } else { %>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
-  <% } %>
+              <script
+                src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+              <% if (isLocal) { %>
+                <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+                <% } else { %>
+                  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+                  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+                  <% } %>
 
 </head>
 
