@@ -24,7 +24,7 @@ layoutEngine.activate();
 start();
 
 Sentry.init({
-  dsn: "https://094713d97e6c445abd8e7642f84dd0fb@o4504899977936896.ingest.sentry.io/4504917238743040",
+  dsn: "INSERT_YOUR_SENTRY_DSN_HERE",
   integrations: [new BrowserTracing()],
   tracesSampleRate: 1.0,
   beforeSend: (event) => {
